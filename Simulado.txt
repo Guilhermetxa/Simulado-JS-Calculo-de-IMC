@@ -3,7 +3,7 @@ var dados = [];
 var resultado = [];
 
 // Loop para receber 10 nomes e medidas de peso
-for (var i = 0; i < 1; i++) {
+for (var i = 0; i < 10; i++) {
     // Solicita ao usuário para inserir o nome
     var nome = prompt("Digite o nome " + (i + 1) + ":");
 
