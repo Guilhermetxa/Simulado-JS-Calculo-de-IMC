@@ -1,0 +1,49 @@
+// Array para armazenar os dados
+var dados = [];
+var resultado = [];
+
+// Loop para receber 10 nomes e medidas de peso
+for (var i = 0; i < 1; i++) {
+    // Solicita ao usuário para inserir o nome
+    var nome = prompt("Digite o nome " + (i + 1) + ":");
+
+    // Solicita ao usuário para inserir a medida da altura
+    var altura = prompt("Digite a altura " + nome + ":");
+
+    // Solicita ao usuário para inserir a medida de peso
+    var peso = prompt("Digite a medida de peso para " + nome + ":");
+
+    // Converte as entradas para números
+    peso = parseFloat(peso);
+    altura = parseFloat(altura);
+   
+     // Calcula o IMC
+    var imc = peso / (altura * altura);
+   
+    // Armazena os dados no array
+    dados.push({ nome: nome, altura: altura, peso: peso, imc: imc});
+  
+}
+
+function resultadoimc(imc) {
+    if (imc < 18.5) {
+        return "Abaixo do peso normal.";
+    } else if (imc >= 18.5 && imc < 25) {
+        return "Peso normal.";
+    } else if (imc >= 25 && imc < 30) {
+        return "Excesso de peso.";
+    } else if (imc >= 30 && imc < 35) {
+        return "Obesidade classe I";
+    } else if (imc >= 35 && imc < 40) {
+        return "Obesidade classe II";
+    } else {
+        return "Obesidade classe III";
+    }
+}
+
+// Exibe os valores no console
+console.log("Valores de entrada:");
+for (var j = 0; j < dados.length; j++) {
+    var classificacao = resultadoimc(imc);
+    console.log("Nome: " + dados[j].nome + ", Altura: " + dados[j].altura +", Peso: " + dados[j].peso + ", IMC: " + dados[j].imc + " || " + classificacao);
+}
